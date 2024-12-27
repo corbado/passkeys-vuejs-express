@@ -73,13 +73,13 @@ to install all dependencies.
 
 Finally, you can run the project locally with the provided start script or individually for frontend and backend.
 
-### Using the start script
+#### Using the start script
 
 ```bash
 ./start.sh
 ```
 
-### Running frontend and backend individually
+#### Running frontend and backend individually
 
 In one terminal session, run the following command in the `frontend` directory:
 ```bash
