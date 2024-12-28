@@ -37,8 +37,8 @@ watch(
             v-for="identifier in externalUserInfo.identifiers"
             :key="identifier.identifierID"
         >
-            <p><strong>Type</strong>: {{ identifier.type }}</p>
-            <p><strong>Value</strong>: {{ identifier.value }}</p>
+            <p><strong>Type:</strong> {{ identifier.type }}</p>
+            <p><strong>Value:</strong> {{ identifier.value }}</p>
         </div>
     </div>
     <h2>Manage your Passkeys</h2>

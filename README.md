@@ -17,11 +17,12 @@ application built with Express.js on the backend and Vue.js on the frontend.
 - `frontend/src/stores/user.ts`: Global store for user data from Corbado and our own backend
 - `backend`: Separate directory for the Express.js backend
 - `backend/.env.example`: Example file for environment variables
-- `backend/src/app.ts`: configuration file for the Express app
-- `backend/src/utils`: collection of utility functions, e.g. helper functions for authentication
-- `backend/src/routes`: directory configuring the routes for the app
-- `backend/src/controller`: controllers for the routes
-- `backend/src/middleware`: middleware, e.g. for authentication
+- `backend/src/app.ts`: Configuration file for the Express app
+- `backend/src/utils`: Collection of utility functions, e.g. helper functions for authentication
+- `backend/src/routes`: Directory configuring the routes for the app
+- `backend/src/controller`: Controllers for the routes
+- `backend/src/middleware`: Middleware, e.g. for authentication
+- `backend/src/db`: Database configuration and queries
   
 
 ## Setup

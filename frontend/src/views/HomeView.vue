@@ -9,9 +9,7 @@ const email = computed(() =>
 );
 const isAuthenticated = computed(() => store.userInfo.status === "authenticated");
 const city = computed(() =>
-    store.externalUserInfo.status === "success"
-        ? store.externalUserInfo.user.city
-        : "unknown",
+    (store.externalUserInfo.status === "success" && store.externalUserInfo.user.city) || "unknown"
 );
 </script>
 
