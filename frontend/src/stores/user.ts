@@ -57,7 +57,6 @@ export const useUserStore = defineStore("user-store", () => {
     const corbadoLoadPromise = Corbado.load({
         projectId: import.meta.env.VITE_CORBADO_PROJECT_ID,
         darkMode: "on",
-        setShortSessionCookie: true,
         theme: "cbo-custom-styles",
         customTranslations: { en: englishTranslations },
     });
