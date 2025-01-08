@@ -1,12 +1,12 @@
 <img width="1070" alt="GitHub Repo Cover" src="https://github.com/corbado/corbado-php/assets/18458907/aa4f9df6-980b-4b24-bb2f-d71c0f480971">
 
-# Typescript Vue.js and Express.js Passkey Example App
+# Vue.js and Express Passkey Example App
 
-This is a sample implementation of
-the [Corbado web-js](https://github.com/corbado/javascript/tree/develop/packages/web-js) package
-and [Corbado Node.js](https://github.com/corbado/corbado-nodejs)
-SDK being integrated into a web
-application built with Express.js on the backend and Vue.js on the frontend.
+This is a sample implementation of the [Corbado passkeys-first authentication solution](https://www.corbado.com) using
+Vue.js and Express. The following packages are being used:
+
+- [Corbado web-js](https://github.com/corbado/javascript/tree/develop/packages/web-js)
+- [Corbado Node.js](https://github.com/corbado/corbado-nodejs)
 
 ## File structure
 
@@ -91,3 +91,9 @@ In another terminal session, run the following command in the `backend` director
 ```bash
 npm run start
 ```
+
+## Passkeys support
+
+- Community for Developer Support: https://bit.ly/passkeys-community
+- Passkeys Debugger: https://www.passkeys-debugger.io/
+- Passkey Subreddit: https://www.reddit.com/r/passkey/
