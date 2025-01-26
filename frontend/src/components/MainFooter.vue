@@ -1,7 +1,7 @@
 <template>
     <footer>
         <a
-            href="https://github.com/corbado/ts-vuejs-ts-express.git"
+            href="https://github.com/corbado/passkeys-vuejs-express"
             target="_blank"
         >
             <img

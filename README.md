@@ -14,7 +14,7 @@ Vue.js and Express. The following packages are being used:
 - `frontend/.env.example`: Example file for environment variables
 - `frontend/src/views`: Contains all pages used in the frontend
 - `frontend/src/router/index.ts`: Contains the route definitions
-- `frontend/src/stores/user.ts`: Global store for user data from Corbado and our own backend
+- `frontend/src/stores/user.svelte.ts`: Global store for user data from Corbado and our own backend
 - `backend`: Separate directory for the Express.js backend
 - `backend/.env.example`: Example file for environment variables
 - `backend/src/app.ts`: Configuration file for the Express app
