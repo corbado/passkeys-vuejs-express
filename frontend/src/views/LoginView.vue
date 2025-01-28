@@ -4,8 +4,8 @@ import { useRouter } from "vue-router";
 import { ref, watch } from "vue";
 import Corbado from "@corbado/web-js";
 
-const loginRef = ref<HTMLDivElement>();
 const router = useRouter();
+const loginRef = ref<HTMLDivElement>();
 const store = useUserStore();
 store.onCorbadoLoaded(() => {
     Corbado.mountAuthUI(loginRef.value!, {
@@ -14,6 +14,7 @@ store.onCorbadoLoaded(() => {
             // do nothing here. We have to wait for a backend response
             // to check whether the user has gone through onboarding already.
             // The backend call is made in the user store.
+            console.log("User logged in");
         },
     });
 });
@@ -39,5 +40,5 @@ watch(
 
 <template>
     <h1>Login</h1>
-    <div ref="loginRef" />
+    <div ref="loginRef"></div>
 </template>

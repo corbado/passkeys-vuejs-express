@@ -13,6 +13,7 @@ const passkeyListRef = ref<HTMLDivElement>();
 store.onCorbadoLoaded(() => {
     Corbado.mountPasskeyListUI(passkeyListRef.value!);
 });
+
 watch(
     () => store.userInfo.status,
     (status) => {

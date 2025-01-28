@@ -26,7 +26,7 @@ const isAuthenticated = computed(
 const revealSecretResult = ref<SecretStatus>({ status: "idle" });
 const revealSecretDiv = ref<HTMLDivElement>();
 
-async function onSubmit() {
+async function fetchSecret() {
     revealSecretResult.value = { status: "loading" };
     const secretGetUrl = `${import.meta.env.VITE_BACKEND_BASE_URL}/api/secret`;
     try {
@@ -43,6 +43,7 @@ async function onSubmit() {
         revealSecretResult.value = { status: "error", error: `${e}` };
     }
 }
+
 </script>
 
 <template>
@@ -51,7 +52,7 @@ async function onSubmit() {
         <p>Since you are logged-in, we can tell you a secret:</p>
         <button
             id="reveal-secret-button"
-            @click="onSubmit"
+            @click="fetchSecret"
             :disabled="
                 ['loading', 'success'].includes(revealSecretResult.status)
             "
@@ -60,7 +61,7 @@ async function onSubmit() {
         </button>
         <div id="reveal-secret-result" ref="revealSecretDiv">
             <div v-if="revealSecretResult.status === 'success'" id="secret-box">
-                <h3>Secret: </h3>
+                <h3>Secret:</h3>
                 <p>{{ revealSecretResult.secret }}</p>
             </div>
             <div v-else-if="revealSecretResult.status === 'loading'">

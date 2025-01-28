@@ -39,5 +39,5 @@ watch(
 
 <template>
     <h1>Signup</h1>
-    <div ref="signupRef" />
+    <div ref="signupRef"></div>
 </template>

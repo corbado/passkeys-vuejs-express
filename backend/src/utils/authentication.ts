@@ -1,6 +1,7 @@
 import { Config, SDK } from "@corbado/node-sdk";
 import { Request } from "express";
 
+// Retrieve environment variables
 const projectID = process.env.CORBADO_PROJECT_ID;
 const apiSecret = process.env.CORBADO_API_SECRET;
 if (!projectID) {
