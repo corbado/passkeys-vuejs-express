@@ -8,6 +8,8 @@ Vue.js and Express. The following packages are being used:
 - [Corbado web-js](https://github.com/corbado/javascript/tree/develop/packages/web-js)
 - [Corbado Node.js](https://github.com/corbado/corbado-nodejs)
 
+[![integration-guides](https://github.com/user-attachments/assets/7859201b-a345-4b68-b336-6e2edcc6577b)](https://app.corbado.com/integration-guides/vuejs-express)
+
 ## File structure
 
 - `frontend`: Separate directory for the Vue.js frontend
