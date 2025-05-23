@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import Corbado from "@corbado/web-js";
 import { ref } from "vue";
 import englishTranslations from "@/utils/corbado-translations.ts";
+import { sendEvent, TelemetryEventType } from "@corbado/shared-util";
 
 export type UserInfo =
     | {
@@ -61,6 +62,16 @@ export const useUserStore = defineStore("user-store", () => {
         customTranslations: { en: englishTranslations },
     });
 
+    sendEvent({
+        type: TelemetryEventType.EXAMPLE_APPLICATION_OPENED,
+        payload: {
+            exampleName: "corbado/ts-vuejs-ts-express",
+        },
+        sdkVersion: "3.1.0",
+        sdkName: "Javascript SDK",
+        identifier: import.meta.env.VITE_CORBADO_PROJECT_ID,
+    });
+
     // **Actions**
     const onCorbadoLoaded = (fn: () => void | Promise<void>) => {
         corbadoLoadPromise.then(fn);
@@ -112,10 +123,12 @@ export const useUserStore = defineStore("user-store", () => {
         });
 
         if (!rsp.ok) {
-            throw new Error(`Failed to submit city: ${rsp.status} ${rsp.statusText}`);
+            throw new Error(
+                `Failed to submit city: ${rsp.status} ${rsp.statusText}`,
+            );
         }
 
-        const json = await rsp.json() as DBUser;
+        const json = (await rsp.json()) as DBUser;
         externalUserInfo.value = {
             status: "success",
             user: json,

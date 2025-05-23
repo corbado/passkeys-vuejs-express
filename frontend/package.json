@@ -14,7 +14,8 @@
     },
     "dependencies": {
         "@corbado/types": "^3.0.0",
-        "@corbado/web-js": "^3.0.0",
+        "@corbado/web-js": "^3.1.0",
+        "@corbado/shared-util": "^1.0.9",
         "pinia": "^2.3.0",
         "prettier-plugin-embed": "^0.4.15",
         "vue": "^3.5.13",
