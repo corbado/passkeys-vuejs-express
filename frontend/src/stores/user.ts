@@ -55,22 +55,29 @@ export const useUserStore = defineStore("user-store", () => {
         status: "not-loaded",
     });
 
-    const corbadoLoadPromise = Corbado.load({
-        projectId: import.meta.env.VITE_CORBADO_PROJECT_ID,
-        darkMode: "on",
-        theme: "cbo-custom-styles",
-        customTranslations: { en: englishTranslations },
-    });
-
-    sendEvent({
-        type: TelemetryEventType.EXAMPLE_APPLICATION_OPENED,
-        payload: {
-            exampleName: "corbado/ts-vuejs-ts-express",
+    const corbadoLoadPromise = Corbado.load(
+        {
+            projectId: import.meta.env.VITE_CORBADO_PROJECT_ID,
+            darkMode: "on",
+            theme: "cbo-custom-styles",
+            customTranslations: { en: englishTranslations },
         },
-        sdkVersion: "3.1.0",
-        sdkName: "Javascript SDK",
-        identifier: import.meta.env.VITE_CORBADO_PROJECT_ID,
-    });
+        import.meta.env.VITE_CORBADO_TELEMETRY_DISABLED === "true"
+            ? false
+            : undefined,
+    );
+
+    if (import.meta.env.VITE_CORBADO_TELEMETRY_DISABLED !== "true") {
+        sendEvent({
+            type: TelemetryEventType.EXAMPLE_APPLICATION_OPENED,
+            payload: {
+                exampleName: "corbado/passkeys-vuejs-express",
+            },
+            sdkVersion: "3.1.0",
+            sdkName: "React SDK",
+            identifier: import.meta.env.VITE_CORBADO_PROJECT_ID,
+        });
+    }
 
     // **Actions**
     const onCorbadoLoaded = (fn: () => void | Promise<void>) => {
